@@ -53,7 +53,7 @@ h2 {
     background-color: white;
     border: 3px solid #ffffff;
     border-radius: 15px;
-    box-shadow: 4px 4px #6eff75;
+    box-shadow: 4px 4px #243120;
     text-align: center;
     padding: 1rem;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -61,7 +61,7 @@ h2 {
 
 .product-card:hover {
     transform: scale(1.05);
-    box-shadow: 6px 6px #4bff14;
+    box-shadow: 6px 6px #243120;
 }
 
 .product-image {
@@ -70,16 +70,92 @@ h2 {
 }
 
 .price {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #ff4500;
     margin-top: 0.5rem;
 }
 
+.old-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: #cf7b5d;
+}
+
 .footer {
     text-align: center;
-    background-color: #8bce72;
     color: white;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+hr.separator {
+    border: 1;
+    border-top: 5px solid #bfd4bc;
+    margin: 2 2;
+}
+
+
+
+#bundle-offerte h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px #243120;
+    margin-bottom: 2rem;
+}
+
+#bundle-offerte .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+#bundle-offerte .product-card {
+    border-radius: 15px;
+    box-shadow: 4px 4px #a0e9a0;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#bundle-offerte .product-card:hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#bundle-offerte .product-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+#bundle-offerte .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4500;
+    margin-top: 0.5rem;
+}
+
+#bundle-offerte .old-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: #cf7b5d;
+}
+
+#bundle-offerte .product-card h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#bundle-offerte .price, #bundle-offerte .old-price {
+    font-size: 1.8rem;
+    color: #ff4500;
+    font-weight: bold;
+}
+
+#bundle-offerte .old-price {
+    font-size: 1.6rem;
+    text-decoration: line-through;
+    color: #b2a8a2;
 }
