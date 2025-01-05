@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
         card.addEventListener("mouseout", () => {
             card.style.transform = "scale(1)";
         });
+
+        dinosauro.addEventListener("mouseover", () => {
+            card.style.transform = "rotate(4deg) scale(1.03)";
+        });
     });
 
     // Carrello
@@ -20,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const productName = card.querySelector("h3").innerText;
             const productPrice = card.querySelector(".price").innerText;
             cart.push({ name: productName, price: productPrice });
-            alert(`Hai aggiunto ${productName} al carrello!`);
             console.log("Carrello attuale:", cart);
         });
     });

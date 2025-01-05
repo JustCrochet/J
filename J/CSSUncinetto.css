@@ -31,10 +31,43 @@ body {
     font-size: 1.2rem;
 }
 
-.section {
-    margin: 2rem;
-    padding: 1rem;
+/* Animazione di entrata dal basso */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+/* Animazione di entrata per sezioni */
+.section {
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: var(--animation-delay, 0s);
+}
+
+/* Ritardo progressivo per i prodotti */
+.product-card {
+    background-color: white;
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    box-shadow: 4px 4px #243120;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* Applicare uno stile per immagini */
+.product-image {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
 
 h2 {
     text-align: center;
@@ -49,31 +82,36 @@ h2 {
     gap: 1.5rem;
 }
 
-.product-card {
-    background-color: white;
-    border: 3px solid #ffffff;
-    border-radius: 15px;
-    box-shadow: 4px 4px #243120;
-    text-align: center;
-    padding: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+/* Nuova animazione per il dinosauro */
+@keyframes dinosauro-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.dinosauro-animate {
+    animation: dinosauro-bounce 1s ease-in-out infinite;
+    offset-rotate: 30;
 }
 
 .product-card:hover {
-    transform: scale(1.05);
+    transform: rotate(3deg) scale(1.05);
     box-shadow: 6px 6px #243120;
+    background-color: #f9f5f0;
 }
 
-.product-image {
-    max-width: 100%;
-    border-radius: 10px;
+.product-image:hover {
+    transform: scale(1.15);
 }
 
 .price {
     font-size: 2rem;
     font-weight: bold;
     color: #ff4500;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 
 .old-price {
@@ -199,4 +237,40 @@ hr.separator {
 
 .top-bar a:hover {
     color: #000;
+}
+
+.cart-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+}
+.cart-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.cart-item span {
+    font-size: 0.9rem;
+}
+.show-cart-button {
+    position: fixed;
+    top: 10px;
+    right: 320px;
+    padding: 10px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

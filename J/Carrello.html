@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello - JustCrochet</title>
+    <link rel="stylesheet" href="CSSUncinetto.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .cart-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .cart-container h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item span {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Il tuo carrello</h1>
+        <div id="cart-items">
+            <!-- Gli elementi del carrello saranno inseriti qui -->
+        </div>
+    </div>
+
+    <script>
+        // Simulazione di dati nel carrello
+        const cart = [
+            { name: "Polipetto Rigirabile 🐙", price: "€34.99" },
+            { name: "Cuoricino con Fiore ❤️", price: "€10.99" },
+            { name: "Cappellino 🧢", price: "€29.99" }
+        ];
+
+        // Riferimento al contenitore degli elementi del carrello
+        const cartItemsContainer = document.getElementById("cart-items");
+
+        // Funzione per aggiornare l'elenco degli articoli nel carrello
+        function updateCart() {
+            cartItemsContainer.innerHTML = "";
+            cart.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+                cartItem.innerHTML = `<span>${item.name}</span><span>${item.price}</span>`;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        // Aggiorna il carrello all'apertura della pagina
+        updateCart();
+    </script>
+</body>
+</html>
